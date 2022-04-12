@@ -1,4 +1,6 @@
-class Person
+require './decorator'
+
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
@@ -18,4 +20,11 @@ class Person
   def can_use_services?
     of_age? || @parent_permission ? true : false
   end
+
+  def correct_name
+    @name
+  end
 end
+
+person1 = Person.new(15, "Bertrand")
+print person1.correct_name

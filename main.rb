@@ -4,7 +4,7 @@ require './app'
 puts "Welcome to OOP school library app"
 
 def interface_options
-    "\n"
+    puts ""
     puts " Please choose among the options below by pressing its corresponding number: 
             1. List all books
             2. List all people
@@ -17,26 +17,31 @@ def interface_options
 end
 
 def main
-    app = App.new()
+    app = App.new
+    app.start_console
+end
+
+def option
     case interface_options
     when "1"
-        app.list_all_books
+        list_all_books
     when "2"
-        app.list_all_people
+        list_all_people
     when "3"
-        app.create_person
+        create_person
     when "4"
-        app.create_book
+        create_book
     when "5"
-        app.create_rental
+        create_rental
     when "6"
-        app.list_rentals
+        list_all_rentals
     when "7"
         puts "Thank you for using the app!"
         return
     else
         puts "Invalid input. Please try again"
     end
+    option()
 end
 
 main()

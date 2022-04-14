@@ -30,7 +30,7 @@ class App
     end
 
     def create_person
-        print "To create teacher account, press 1. To create student account, press 2..."
+        print "To create teacher account, press 1. To create student account, press 2:  "
         option = gets.chomp
         print "Enter your name: "
         name = gets.chomp
@@ -95,6 +95,9 @@ class App
     end
 
     def create_rental
+        if @books.empty? && @people.empty?
+            puts "There are no books and people in the system" 
+        else
         puts "Please press the number corresponding to the book that you want: "
         @books.each_with_index { |book, index| puts "#{index + 1}) Book Title: \"#{book.title}\" | Author: #{book.author}" }
         number = gets.chomp.to_i
@@ -113,6 +116,7 @@ class App
         @rentals << rent
         
         puts "The book has been rented successfully"
+        end
     end
 
     def list_all_rentals
@@ -125,7 +129,7 @@ class App
         else 
             puts "Your rental records are the following: "
             puts ""
-            rental.each { |record| puts "Date: #{record.date} | Borrowed book: \"#{record.book.title}\" by #{record.book.author}" }
+            rental.each_with_index { |record, index| puts "#{index + 1}| Date: #{record.date} | Borrower: #{record.person.name} | Status: #{record.person.class} | Borrowed book: \"#{record.book.title}\" by #{record.book.author}" }
         end
     end
         

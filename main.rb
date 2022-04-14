@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require './app'
 
 puts 'Welcome to OOP school library app'

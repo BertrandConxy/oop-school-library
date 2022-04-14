@@ -9,8 +9,9 @@
 > - And all of this is built in a beautiful and well-organized way!
 
 
-# ScreenShot
-![class-diagram](https://user-images.githubusercontent.com/90222110/162753815-d5654e01-3d01-49c6-8f9c-5076e92f413a.png)
+# Demo gif
+![demo](https://user-images.githubusercontent.com/90222110/163357519-72e513a1-7455-43f5-b046-01a32b29556d.gif)
+
 
 
 ## Built With

@@ -35,13 +35,19 @@ Clone the repo and run bundle install in the command line to install the depende
 - ruby main.rb
 ```
 
-## Author
+## Authors
 
 👤 **Bertrand Mutangana Ishimwe**
 
 - GitHub: [@BertrandConxy](https://github.com/BertrandConxy)
 - Twitter: [@Bconxy](https://twitter.com/BertrandMutanga)
 - LinkedIn: [Bertrand Mutangana Ishimwe](https://www.linkedin.com/in/bertrandmutangana)
+
+👤 **Josaphat Nkonde**
+
+- GitHub: [@zairdon20](https://github.com/zairdon20)
+- Twitter: [@josphatnkonde1](https://twitter.com/josphatnkonde1)
+- LinkedIn: [josphat-nkonde](https://www.linkedin.com/in/josphat-nkonde/)
 
 
 ## 🤝 Contributing

@@ -2,21 +2,21 @@ require_relative './student'
 require_relative './teacher'
 
 class PeopleModule
-    attr_accessor :people
+  attr_accessor :people
 
-    def initialize
-        @people = []
-    end
+  def initialize
+    @people = []
+  end
 
-    def list_all_people
+  def list_all_people
     puts 'Sorry, there are no people available at the moment' if @people.empty?
     puts "There are #{@people.count} people in the system"
     @people.each_with_index do |person, index|
       puts "#{index + 1})[#{person.class}] Name: #{person.name} | Age: #{person.age} | ID: #{person.id}"
     end
-    end
+  end
 
-    def create_person
+  def create_person
     print 'To create teacher account, press 1. To create student account, press 2:  '
     option = gets.chomp
     print 'Enter your name: '

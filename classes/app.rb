@@ -8,7 +8,7 @@ require_relative './decorator'
 
 class App
   def initialize
-    @books = bookmodule.new 
+    @books = BookModule.new
     @people = []
     @rentals = []
   end
@@ -30,13 +30,13 @@ class App
     selection = gets.chomp
     case selection
     when '1'
-      @books.list_all_books 
+      @books.list_all_books
     when '2'
       list_all_people
     when '3'
       create_person
     when '4'
-      @books.create_book 
+      @books.create_book
     when '5'
       create_rental
     when '6'
@@ -49,7 +49,6 @@ class App
     end
     option
   end
-
 
   def list_all_people
     puts 'Sorry, there are no people available at the moment' if @people.empty?
@@ -106,7 +105,6 @@ class App
     puts ''
     puts "Student is created successfully. Your ID is #{student.id}"
   end
-
 
   def create_rental
     if @books.empty? && @people.empty?

@@ -1,9 +1,12 @@
 require_relative './rental'
+require 'json'
 class RentalsModule
   attr_accessor :rentals, :people, :books
 
   def initialize(books, person)
-    @rentals = []
+    @storage_file = './storage/rentals.json'
+    file = JSON.parse(File.read(@storage_file))
+    @rentals = file.empty? ? [] : file
     @books = books
     @people = person
   end
@@ -12,7 +15,7 @@ class RentalsModule
     puts 'No rentals has been made at the moment' if @rentals.empty?
     print 'To view your rental records, type your ID: '
     id = gets.chomp.to_i
-    rental = @rentals.select { |rend| rend.person.id == id }
+    rental = @rentals.select { |rend| rend['person']['id']== id }
     if rental.empty?
       puts 'No records for that particular ID'
     else
@@ -20,8 +23,8 @@ class RentalsModule
       puts ''
       rental.each_with_index do |record, index|
         puts ''
-        print "#{index + 1}| Date: #{record.date} | Borrower: #{record.person.name}"
-        print " | Status: #{record.person.class} | Borrowed book: \"#{record.book.title}\" by #{record.book.author}"
+        print "#{index + 1}| Date: #{record['date']} | Borrower: #{record['person']['name']}"
+        print " | Status: #{record['person']['class'} | Borrowed book: \"#{record['book']['title']}\" by #{record['book']['author']}"
         puts ''
       end
     end

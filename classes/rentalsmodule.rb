@@ -1,9 +1,11 @@
 require_relative './rental'
 class RentalsModule
-  attr_accessor :rentals
+  attr_accessor :rentals, :people, :books
 
-  def initialize
+  def initialize(books, person)
     @rentals = []
+    @books = books
+    @people = person
   end
 
   def list_all_rentals
@@ -17,8 +19,10 @@ class RentalsModule
       puts 'Your rental records are the following: '
       puts ''
       rental.each_with_index do |record, index|
-        puts "#{index + 1}| Date: #{record.date} | Borrower: #{record.person.name}
-             | Status: #{record.person.class} | Borrowed book: \"#{record.book.title}\" by #{record.book.author}"
+        puts ''
+        print "#{index + 1}| Date: #{record.date} | Borrower: #{record.person.name}"
+        print " | Status: #{record.person.class} | Borrowed book: \"#{record.book.title}\" by #{record.book.author}"
+        puts ''
       end
     end
   end

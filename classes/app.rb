@@ -1,11 +1,12 @@
 require_relative './bookmodule'
 require_relative './personmodule'
+require_relative './rentalsmodule'
 
 class App
   def initialize
     @books = BookModule.new
     @people = PeopleModule.new
-    @rentals = RentalsModule.new
+    @rentals = RentalsModule.new(@books.books, @people.people)
   end
 
   def interface_options

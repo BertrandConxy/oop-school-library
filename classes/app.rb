@@ -1,10 +1,10 @@
-require './student'
-require './classroom'
-require './book'
-require './rental'
-require './teacher'
-require './person'
-require './decorator'
+require_relative './student'
+require_relative './classroom'
+require_relative './book'
+require_relative './rental'
+require_relative './teacher'
+require_relative './person'
+require_relative './decorator'
 
 class App
   def initialize
@@ -13,7 +13,40 @@ class App
     @rentals = []
   end
 
-  def start_console
+  def interface_options
+    puts ''
+    puts " Please choose among the options below by pressing its corresponding number:
+            1. List all books
+            2. List all people
+            3. Create person account
+            4. Create a book
+            5. Create a rental
+            6. List all rentals for particular person
+            7. Exit"
+  end
+
+  def option
+    interface_options
+    selection = gets.chomp
+    case selection
+    when '1'
+      list_all_books
+    when '2'
+      list_all_people
+    when '3'
+      create_person
+    when '4'
+      create_book
+    when '5'
+      create_rental
+    when '6'
+      list_all_rentals
+    when '7'
+      puts 'Thank you for using the app!'
+      exit
+    else
+      puts 'Invalid input. Please try again'
+    end
     option
   end
 

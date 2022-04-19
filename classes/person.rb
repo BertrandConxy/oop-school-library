@@ -1,4 +1,4 @@
-require './decorator'
+require_relative './decorator'
 
 class Person < Nameable
   attr_reader :id, :parent_permission

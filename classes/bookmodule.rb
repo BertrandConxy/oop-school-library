@@ -2,7 +2,7 @@ require_relative './book'
 require 'json'
 
 class BookModule
-  attr_accessor :books
+  attr_accessor :books, :storage_file
 
   def initialize
     @storage_file = './storage/books.json'

@@ -15,7 +15,7 @@ class RentalsModule
     puts 'No rentals has been made at the moment' if @rentals.empty?
     print 'To view your rental records, type your ID: '
     id = gets.chomp.to_i
-    rental = @rentals.select { |rend| rend['person']['id']== id }
+    rental = @rentals.select { |rend| rend['person']['id'] == id }
     if rental.empty?
       puts 'No records for that particular ID'
     else
@@ -24,7 +24,8 @@ class RentalsModule
       rental.each_with_index do |record, index|
         puts ''
         print "#{index + 1}| Date: #{record['date']} | Borrower: #{record['person']['name']}"
-        print " | Status: #{record['person']['class']} | Borrowed book: \"#{record['book']['title']}\" by #{record['book']['author']}"
+        print " | Status: #{record['person']['json_class']} | Borrowed book: \"#{record['book']['title']}\" "
+        print "by #{record['book']['author']}"
         puts ''
       end
     end
@@ -42,7 +43,9 @@ class RentalsModule
       index = number - 1
 
       puts 'PLease type your ID (See from the list of people below): '
-      @people.each { |person| puts "[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}" }
+      @people.each do |person|
+        puts "[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}"
+      end
       identity = gets.chomp.to_i
 
       individual = @people.select { |person| person['id'] == identity }.first

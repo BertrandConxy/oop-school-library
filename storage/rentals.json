@@ -1,0 +1,1 @@
+[{"json_class":"Rental","date":"2000-20-30","book":{"json_class":"Book","title":"Made to stick","author":"Bowman"},"person":{"json_class":"Student","id":428,"classroom":"s6","age":20,"name":"Bertrand","parent_permission":true}}]

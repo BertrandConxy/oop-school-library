@@ -1,18 +1,21 @@
 require_relative './student'
 require_relative './teacher'
+require 'json'
 
 class PeopleModule
   attr_accessor :people
 
   def initialize
-    @people = []
+    @storage_file = './storage/people.json'
+    file = JSON.parse(File.read(@storage_file))
+    @people = file.empty? ? [] : file
   end
 
   def list_all_people
     puts 'Sorry, there are no people available at the moment' if @people.empty?
     puts "There are #{@people.count} people in the system"
     @people.each_with_index do |person, index|
-      puts "#{index + 1})[#{person.class}] Name: #{person.name} | Age: #{person.age} | ID: #{person.id}"
+      puts "#{index + 1})[#{person['json_class']}] Name: #{person['name']} | Age: #{person['age']} | ID: #{person['id']}"
     end
   end
 
@@ -42,9 +45,11 @@ class PeopleModule
 
   def create_teacher(specialization, age, name)
     teacher = Teacher.new(specialization, age, name)
+    teacher = teacher.to_json
     @people << teacher
+    File.write(@storage_file, JSON[@people])
     puts ''
-    puts "Teacher is created successfully. Your ID is #{teacher.id}"
+    puts "Teacher is created successfully. Your ID is #{teacher['id']}"
   end
 
   def create_student(class_grade, age, name)
@@ -59,8 +64,10 @@ class PeopleModule
       puts 'invalid selection. Please try again'
       return
     end
+    student = student.to_json
     @people << student
+    File.write(@storage_file, JSON[@people])
     puts ''
-    puts "Student is created successfully. Your ID is #{student.id}"
+    puts "Student is created successfully. Your ID is #{student['id']}"
   end
 end

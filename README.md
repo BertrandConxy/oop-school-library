@@ -18,6 +18,10 @@
 
 - Ruby
 
+## Other technologies
+
+- Rspec
+
 # Get Started
 To get a local copy up and running follow these simple steps.
 
@@ -49,6 +53,12 @@ Clone the repo and run bundle install in the command line to install the depende
 - Twitter: [@josphatnkonde1](https://twitter.com/josphatnkonde1)
 - LinkedIn: [josphat-nkonde](https://www.linkedin.com/in/josphat-nkonde/)
 
+👤 **Butler Shimaluwani**
+
+- GitHub: [@ButlerMuwo](https://github.com/butlermuwo)
+- Twitter: [@ButlerMuwo](https://twitter.com/ButlerMuwo)
+- LinkedIn: [@ButlerMuwo](https://www.linkedin.com/in/butler-shimaluwani-41a680159/)
+
 
 ## 🤝 Contributing
 
@@ -63,7 +73,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
-- Thanks tot Clinton Mbonu
+- Thanks a lot Clinton Mbonu
 
 ## 📝 License
 

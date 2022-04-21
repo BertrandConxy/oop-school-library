@@ -21,7 +21,7 @@ describe Student do
   context ' when add_classroom method is called' do
     it 'adds student to class' do
       @s1 = Classroom.new('s1')
-      @student.add_classroom = @s1
+      @student.classroom = @s1
       expect(@student.classroom.students.length).to eql(1)
     end
   end
